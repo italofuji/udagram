@@ -1,0 +1,14 @@
+[
+    {
+        "ParameterKey": "EnvironmentName",
+        "ParameterValue": "UdacityProject"
+    },
+    {
+		"ParameterKey": "BucketName",
+		"ParameterValue": "udagram123321"
+	},
+    {
+        "ParameterKey": "ZipFile",
+		"ParameterValue": "udagramApp.zip"
+    }
+]
