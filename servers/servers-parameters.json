@@ -10,5 +10,9 @@
     {
         "ParameterKey": "ZipFile",
 		"ParameterValue": "udagramApp.zip"
+    },
+    {
+        "ParameterKey": "InstanceType",
+        "ParameterValue": "t2.micro"
     }
 ]

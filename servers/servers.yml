@@ -16,6 +16,12 @@ Parameters:
     Description: Zip file that contains web app file
     Type: String
 
+  InstanceType:
+    Description: Enter t2.micro, m1.small, or t3.medium. Default is t2.micro.
+    Type: String
+    Default: "t2.micro"
+    AllowedValues: ["t2.micro", "m1.small", "t3.medium"]
+
 Resources:  
 
   BucketReadOnlyRole:
@@ -96,8 +102,8 @@ Resources:
           !Sub "${EnvironmentName}-PRIVATE-SUBNETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
-      MinSize: '2'
-      MaxSize: '5'
+      MinSize: '1'
+      MaxSize: '2'
       TargetGroupARNs:
       - Ref: WebAppTargetGroup
       HealthCheckGracePeriod: 60
@@ -128,7 +134,7 @@ Resources:
       KeyName: UdacityProjectTwo
       SecurityGroups:
       - Ref: WebServerSecurityGroup
-      InstanceType: t2.medium
+      InstanceType: !Ref InstanceType
       BlockDeviceMappings:
       - DeviceName: "/dev/sdk"
         Ebs:
